@@ -7,6 +7,7 @@
 
 # In[1]:
 
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
@@ -15,6 +16,7 @@ import matplotlib.patches as patches
 # ----------------------------------------------------------------
 
 # In[2]:
+
 
 def shift_fX(x):
     shift_order_fX = [8, 0, 1, 2, 3, 4, 5, 6, 7]
@@ -39,6 +41,7 @@ def transposition(x):
 
 # In[3]:
 
+
 def turn(x):
     turn_order =   [6,3,0,7,4,1,8,5,2] 
     return  [x[i] for i in turn_order]
@@ -48,6 +51,7 @@ def turn(x):
 # ------------------------------------------------
 
 # In[4]:
+
 
 def build_shape(x):
     dx = 1/3
@@ -74,6 +78,7 @@ def build_shape(x):
 
 # In[5]:
 
+
 def show_shape(x):
     ax1=plt.subplot(111,aspect='equal')
     shape = build_shape(x)
@@ -86,6 +91,7 @@ def show_shape(x):
 # ----------------------------------------------------
 
 # In[6]:
+
 
 def shift3D_fX(x):
     return  shift_fX(x[0:9]) + shift_fX(x[9:18])+ shift_fX(x[18:27])
@@ -108,6 +114,7 @@ def shift3D_bZ(x):
 
 # In[7]:
 
+
 def turn3D_Z(x):
     return  turn(x[0:9])+ turn(x[9:18])+ turn(x[18:27])
 
@@ -126,6 +133,7 @@ def turn3D_X(x):
 # ---------------------------------------------------------------
 
 # In[8]:
+
 
 def show3D_shape(x):
     ax1 = plt.subplot(131,aspect='equal')
@@ -154,16 +162,17 @@ def show3D_shape(x):
 
 # In[9]:
 
-AA = [1,0,0,1,0,0,0,0,0,
-      0,0,0,1,1,0,0,0,0,
+
+AA = [1,1,0,0,1,0,0,0,0,
+      1,0,0,0,0,0,0,0,0,
       0,0,0,0,0,0,0,0,0] 
 
-BB = [0,0,0,1,1,0,0,0,0,
-      1,0,0,1,0,0,0,0,0,
+BB = [1,1,0,1,0,0,0,0,0,
+      0,1,0,0,0,0,0,0,0,
       0,0,0,0,0,0,0,0,0] 
 
-LL = [1,1,0,1,0,0,1,0,0,
-      0,0,0,0,0,0,0,0,0,
+LL = [1,1,1,1,0,0,0,0,0,
+      0,0,0,1,0,0,0,0,0,
       0,0,0,0,0,0,0,0,0] 
 
 PP = [1,0,0,0,0,0,0,0,0,
@@ -186,17 +195,22 @@ ZZ = [1,1,0,0,1,1,0,0,0,
 # Black devil
 # -------------
 
-# The black devil is made up of six polycubes: AA, BB, LL, TT, GAB, ZZB, four of which are share with the Soma cube. Therefore it suffies to describe GAB and ZZB only.
+# The black devil is made up of six polycubes: AA, BB, LL, TTB, GAB, ZZB, four of which are share with the Soma cube. Therefore it suffies to describe GAB and ZZB only.
 
 # In[10]:
 
-GAB = [1,0,0,1,0,0,1,1,0,
-       0,0,0,0,0,0,0,1,0,
+
+GAB = [1,1,1,1,0,0,0,0,0,
+       0,0,0,1,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0]
 
-ZZB = [0,0,0,1,0,0,0,0,0,
-       1,1,0,1,0,0,0,0,0,
-       0,1,0,0,0,0,0,0,0]
+TTB = [1,1,1,0,1,0,0,0,0,
+       0,0,1,0,0,0,0,0,0,
+       0,0,0,0,0,0,0,0,0]
+
+ZZB = [1,1,0,0,1,0,0,0,0,
+       0,0,0,0,1,1,0,0,0,
+       0,0,0,0,0,0,0,0,0]
 
 
 # Red devil
@@ -205,6 +219,7 @@ ZZB = [0,0,0,1,0,0,0,0,0,
 # The Red devil cube is made up of six polycubes: AA, BB, LL, GAR, TTI, ZZR
 
 # In[11]:
+
 
 GAR = [1,1,1,0,0,0,0,0,0,
        1,0,0,1,0,0,0,0,0,
@@ -217,14 +232,4 @@ TTR =  [1,1,1,0,0,1,0,0,0,
 ZZR =  [0,1,1,0,1,0,0,0,0,
         0,0,0,1,1,0,0,0,0,
         0,0,0,0,0,0,0,0,0] 
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
 
